@@ -771,11 +771,11 @@ class Reports_model extends CI_Model {
 					if($data['customer_id'] != ''){
 						$this->db->where('a.customer_id',$data['customer_id']);
 					}
-					// if(isset($data['date_from'])){
-					// 	if(($data['date_from'] !='')&&($data['date_to'] !='')){
-					// 		$this->db->where('a.receipt_date <',$data['date_from']);
-					// 	}
-					// }
+					if(isset($data['date_from'])){
+						if(($data['date_from'] !='')&&($data['date_to'] !='')){
+							$this->db->where('a.receipt_date <',$data['date_from']);
+						}
+					}
 				}
 				// if($this->session->userdata('access_level') >= 1){
 				// 	$this->db->where('a.company_id',$this->session->userdata('company_id'));
